@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using System.Text;
 
 public class DogUI : MonoBehaviour
 {
@@ -28,14 +29,26 @@ public class DogUI : MonoBehaviour
 
     void OnSuccess(BreedResponse response)
     {
-        breedText.text = "";
-
+        var sb = new StringBuilder();
         foreach (var breed in response.data)
         {
-            breedText.text +=
-                $"Name: {breed.attributes.name}\n" +
-                $"Description: {breed.attributes.description}\n\n";
+            sb.AppendLine("Name: " + breed.attributes.Name);
+            sb.AppendLine("Description: " + breed.attributes.Description);
+
+            sb.AppendLine("Min Lifespan: " + breed.attributes.Life.Min);
+            sb.AppendLine("Max Lifespan: " + breed.attributes.Life.Max);
+
+            //sb.AppendLine("Min Male Weight " + breed.attributes.MaleWeight.Min);
+            //sb.AppendLine("Max Male Weight " + breed.attributes.MaleWeight.Max);
+
+            //sb.AppendLine("Min Female Weight " + breed.attributes.FemaleWeight.Min);
+            //sb.AppendLine("Max Female Weight " + breed.attributes.FemaleWeight.Max);
+
+            sb.AppendLine("Hypoallergenic: " + breed.attributes.Hypoallergenic);
+            sb.AppendLine();
         }
+
+        breedText.text = sb.ToString();
 
         prevButton.SetActive(currentPage > 1);
         nextButton.SetActive(response.links.next != null);

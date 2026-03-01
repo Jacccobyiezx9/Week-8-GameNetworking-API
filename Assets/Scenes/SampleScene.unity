@@ -155,8 +155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -149, y: -165}
-  m_SizeDelta: {x: 133.74, y: 30}
+  m_AnchoredPosition: {x: -331, y: -162}
+  m_SizeDelta: {x: 111.5, y: 107.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &198729981
 MonoBehaviour:
@@ -201,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 198729982}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 302973230}
+        m_TargetAssemblyTypeName: DogUI, Assembly-CSharp
+        m_MethodName: PreviousPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &198729982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,8 +334,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1626364043}
   m_HandleRect: {fileID: 1626364042}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.2025
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -377,7 +389,7 @@ GameObject:
   - component: {fileID: 302973229}
   - component: {fileID: 302973230}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: BrowserManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -411,6 +423,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DogUI
   breedText: {fileID: 1944972647}
+  nextButton: {fileID: 379300625}
+  prevButton: {fileID: 198729979}
+  currentPage: 1
 --- !u!1 &305564842
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,8 +738,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 146, y: -166}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 332, y: -169}
+  m_SizeDelta: {x: 111.91, y: 95.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &379300627
 MonoBehaviour:
@@ -769,7 +784,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 379300628}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 302973230}
+        m_TargetAssemblyTypeName: DogUI, Assembly-CSharp
+        m_MethodName: NextPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &379300628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1329,7 +1356,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1195058849}
   m_HandleRect: {fileID: 1195058848}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1746,6 +1773,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1836855898}
+  - component: {fileID: 1836855900}
+  - component: {fileID: 1836855899}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -1770,9 +1799,49 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 2000}
+  m_AnchoredPosition: {x: 30, y: 0}
+  m_SizeDelta: {x: -107, y: 0}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &1836855899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836855897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
+--- !u!114 &1836855900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836855897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 1
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &1850896988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1959,10 +2028,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1836855898}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 786}
-  m_SizeDelta: {x: 400, y: 353.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 400, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1944972647
 MonoBehaviour:

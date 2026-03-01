@@ -74,8 +74,8 @@ public class BreedData
 [Serializable]
 public class BreedAttributes
 {
-    public string name;
-    public string description;
+    public string Name;
+    public string Description;
     public BreedLife Life;
     public BreedWeight MaleWeight;
     public BreedWeight FemaleWeight;
