@@ -38,11 +38,11 @@ public class DogUI : MonoBehaviour
             sb.AppendLine("Min Lifespan: " + breed.attributes.Life.Min);
             sb.AppendLine("Max Lifespan: " + breed.attributes.Life.Max);
 
-            //sb.AppendLine("Min Male Weight " + breed.attributes.MaleWeight.Min);
-            //sb.AppendLine("Max Male Weight " + breed.attributes.MaleWeight.Max);
+            sb.AppendLine("Min Male Weight: " + breed.attributes.male_weight.Min);
+            sb.AppendLine("Max Male Weight: " + breed.attributes.male_weight.Max);
 
-            //sb.AppendLine("Min Female Weight " + breed.attributes.FemaleWeight.Min);
-            //sb.AppendLine("Max Female Weight " + breed.attributes.FemaleWeight.Max);
+            sb.AppendLine("Min Female Weight: " + breed.attributes.female_weight.Min);
+            sb.AppendLine("Max Female Weight: " + breed.attributes.female_weight.Max);
 
             sb.AppendLine("Hypoallergenic: " + breed.attributes.Hypoallergenic);
             sb.AppendLine();

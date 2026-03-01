@@ -77,8 +77,8 @@ public class BreedAttributes
     public string Name;
     public string Description;
     public BreedLife Life;
-    public BreedWeight MaleWeight;
-    public BreedWeight FemaleWeight;
+    public BreedWeight male_weight;
+    public BreedWeight female_weight;
     public bool Hypoallergenic;
 }
 [Serializable]
