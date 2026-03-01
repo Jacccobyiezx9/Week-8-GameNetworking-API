@@ -9,11 +9,11 @@ using UnityEngine.Networking;
 public static class APIManager
 {
     //https://dogapi.dog/docs/api-v2
-    public const string BASE_URL = "https://dogapi.dog/api/v2/breeds?page[size]=10";
+    public const string BASE_URL = "https://dogapi.dog/api/v2/";
     public const string Breeds = "breeds";
     public static IEnumerator Get<T>(string route, Action<T> OnSuccess, Action<string> OnError)
     {
-        using (UnityWebRequest webRequest = UnityWebRequest.Get(BASE_URL + route))
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(route))
         {
             yield return webRequest.SendWebRequest();
             
@@ -48,10 +48,19 @@ public class DogBreed
     [JsonProperty("type")]
     public string DogBreedType;
 }
+
 [Serializable]
 public class BreedResponse
 {
     public List<BreedData> data;
+    public BreedLinks links;
+}
+
+[Serializable]
+public class BreedLinks
+{
+    public string next;
+    public string prev;
 }
 
 [Serializable]
@@ -67,5 +76,22 @@ public class BreedAttributes
 {
     public string name;
     public string description;
+    public BreedLife Life;
+    public BreedWeight MaleWeight;
+    public BreedWeight FemaleWeight;
+    public bool Hypoallergenic;
+}
+[Serializable]
+public class BreedLife
+{
+    public float Max;
+    public float Min;
+}
+
+[Serializable]
+public class BreedWeight
+{
+    public float Max;
+    public float Min;
 }
 
