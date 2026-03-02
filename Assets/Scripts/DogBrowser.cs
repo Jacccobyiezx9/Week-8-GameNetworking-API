@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using System.Text;
+using UnityEngine.UI;
 
 public class DogUI : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class DogUI : MonoBehaviour
     [SerializeField] private GameObject prevButton;
     [SerializeField] private int currentPage = 1;
     [SerializeField] private int maxPages = 29;
+    [SerializeField] private Scrollbar scrollbar;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,6 +29,7 @@ public class DogUI : MonoBehaviour
             OnSuccess,
             OnError
         ));
+        scrollbar.value = 1;
     }
 
     void OnSuccess(BreedResponse response)
@@ -69,6 +72,7 @@ public class DogUI : MonoBehaviour
     {
         currentPage++;
         LoadPage();
+
     }
 
     public void PreviousPage()

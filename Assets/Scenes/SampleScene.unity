@@ -423,11 +423,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DogUI
   breedText: {fileID: 1944972647}
-  pageText: {fileID: 0}
+  pageText: {fileID: 1108614645}
   nextButton: {fileID: 379300625}
   prevButton: {fileID: 198729979}
   currentPage: 1
   maxPages: 29
+  scrollbar: {fileID: 288061672}
 --- !u!1 &305564842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1493,7 +1494,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
