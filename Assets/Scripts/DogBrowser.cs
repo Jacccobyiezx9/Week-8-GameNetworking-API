@@ -6,9 +6,11 @@ using System.Text;
 public class DogUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text breedText;
+    [SerializeField] private TMP_Text pageText;
     [SerializeField] private GameObject nextButton;
     [SerializeField] private GameObject prevButton;
     [SerializeField] private int currentPage = 1;
+    [SerializeField] private int maxPages = 29;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,20 +36,24 @@ public class DogUI : MonoBehaviour
         {
             sb.AppendLine("Name: " + breed.attributes.Name);
             sb.AppendLine("Description: " + breed.attributes.Description);
+            sb.AppendLine();
 
             sb.AppendLine("Min Lifespan: " + breed.attributes.Life.Min);
             sb.AppendLine("Max Lifespan: " + breed.attributes.Life.Max);
+            sb.AppendLine();
 
             sb.AppendLine("Min Male Weight: " + breed.attributes.male_weight.Min);
             sb.AppendLine("Max Male Weight: " + breed.attributes.male_weight.Max);
+            sb.AppendLine();
 
             sb.AppendLine("Min Female Weight: " + breed.attributes.female_weight.Min);
             sb.AppendLine("Max Female Weight: " + breed.attributes.female_weight.Max);
+            sb.AppendLine();
 
             sb.AppendLine("Hypoallergenic: " + breed.attributes.Hypoallergenic);
             sb.AppendLine();
         }
-
+        pageText.text = currentPage + " / " + maxPages;
         breedText.text = sb.ToString();
 
         prevButton.SetActive(currentPage > 1);
